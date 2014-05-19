@@ -1,16 +1,16 @@
-<!-- Made by Marcel Engelmann | Twitter: @marcelengelmann | Website: www.marcelengelmann.de -->
+<!-- Made by Marcel Engelmann | Twitter: @marcelengelmann | Website: http://www.marcelengelmann.de -->
 <!-- Created 19th May 2014 -->
 <!-- Last Modifikation on 19th May 2014 -->
-<!-- Intro Seite -->
+<!-- Jimdo - Intropage -->
+<!-- MIT License 2014 Marcel Engelmann -->
 
-<!-- Fügen Sie folgende Codes bitte in den Head-Bereich ihrer Website ein -->
-
+<!-- Add the following lines of code into the head section of their Jimdo website -->
 <style type="text/css">
 /*<![CDATA[*/ 
-        /**************** PrePage ***************/
-        /******* Fläche erzeugen für die PrePage *******/
-        #preloadscreen {
-                position:fixed;/* Legt die Position fest */
+        /**************** JimdoIntropage ***************/
+        /******* Create a space for the Jimdo-Intropage *******/
+        #jimdointropage {
+                position:fixed;/* Makes the position fixed */
                 top:0;/* bewirkt, dass die Fläche oben anfängt */
                 left:0;/* bewirkt, dass die Fläche links anfängt */
                 width:100%;/* bewirkt, dass 100% der Breite eingenommen werden */
@@ -38,7 +38,7 @@
                 to {opacity:0;}
         }
         
-        #preloadscreenimgwrapper {
+        #jimdointropagewrapper {
                 position:absolute;/* Position frei veränderbar machen */
                 top:50%;/* Position vertikal zentrieren */
                 left:50%;/* Position horizontal zentrieren */
@@ -48,18 +48,16 @@
                 2. Angabe bei margin = Kann außer acht gelassen werden,sollte = 0 sein
                 3. Angabe bei margin = Kann außer acht gelassen werden,sollte = 0 sein
                 4. Anhabe bei margin = nach nach links verschieben / SOLLTE IMMER DIE HÄLFTE DER BREITES DES BILDES IN PX SEIN. Der Wert wird immer negativ angegeben */
-        }
-        
+        }    
 /*]]>*/
 </style>
 
 
 <script type="text/javascript">
 //<![CDATA[
-        // Cookie-Funktion !
-        // Diese Funktion wurde für die Introseite-Seite geschrieben!
+        // Cookie-Function
         
-        // Diese Funktion dient dazu einen Wert aus dem Cookie zu erhalten!
+        // This functions creates and calculates a value how often someone has visit the page
         function WertHolen() {
                 var Wert = "";
                 if (document.cookie) {
@@ -71,15 +69,15 @@
                 return Wert;
         }
         
-        // Diese Funktion dient dazu einen Cookie zu setzen!
+        // This functions sets the cookie 
         function WertSetzen(Bezeichner, Wert, Verfall) {
                 var jetzt = new Date();
                 var Auszeit = new Date(jetzt.getTime() + Verfall);
                 document.cookie = Bezeichner + "=" + Wert + "; expires=" + Auszeit.toGMTString() + ";";
         }
         
-        function Zaehlerstand() {
-        // Bei der Verfallszeit gibt der letzte Parameter an, wie viele tage der Cookie gespeichert wird!
+        function getCounter() {
+        // The last parameter specifies how many days the cookie is saved until it will expire and the startscreen is shown again
                 var Verfallszeit = 1000 * 60 * 60 * 24 * 1;
                 var Anzahl = WertHolen();
                 var Zaehler = 0;
