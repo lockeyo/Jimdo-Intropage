@@ -1,0 +1,25 @@
+<div id="preloadscreen">
+	<div id="preloadscreenimgwrapper">
+		<h1>Header</h1>
+		<p>Here you can add content, like text, pictrues or videos.</p>
+	</div>
+</div>
+    
+<script type="text/javascript">
+	x = Zaehlerstand();
+	function showPreLoadPage(){
+		document.getElementById('preloadscreen').style.display = "block";
+	}
+
+	function hidePreLoadPage(){
+		document.getElementById('preloadscreen').style.display = "none";
+	}
+
+	if(x == 1){
+		showPreLoadPage();
+	}
+	
+	setInterval(function(){
+		hidePreLoadPage();
+	},6000);
+</script>

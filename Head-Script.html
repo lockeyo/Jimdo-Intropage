@@ -1,0 +1,92 @@
+<!-- Made by Marcel Engelmann | Twitter: @marcelengelmann | Website: www.marcelengelmann.de -->
+<!-- Created 19th May 2014 -->
+<!-- Last Modifikation on 19th May 2014 -->
+<!-- Intro Seite -->
+
+<!-- Fügen Sie folgende Codes bitte in den Head-Bereich ihrer Website ein -->
+
+<style type="text/css">
+/*<![CDATA[*/ 
+        /**************** PrePage ***************/
+        /******* Fläche erzeugen für die PrePage *******/
+        #preloadscreen {
+                position:fixed;/* Legt die Position fest */
+                top:0;/* bewirkt, dass die Fläche oben anfängt */
+                left:0;/* bewirkt, dass die Fläche links anfängt */
+                width:100%;/* bewirkt, dass 100% der Breite eingenommen werden */
+                height:100%;/* bewirkt, dass 100% der Höhe eingenommen werden */
+                background:#eaeaea;/* Hier wird die Hintergrundfarbe verändert - für die Farbcodes bitte www.colorpicker.com verwenden */
+                z-index:9999;/* Diser Wert sollte nicht verändert werden, er dient dazu, dass das Element über allen anderen steht */
+                display:none; /* Hier wird die Sichtbarkeit angegeben. In diesem Fall ist es zuerst nicht sichtbar */
+                animation:fade 1s 1;/* Keyframeangabe der Animation für Firefox / IE / etc */
+                -webkit-animation:fade 1s 1;/* Keyframeangabe der Animation für Safari and Chrome */
+                animation-fill-mode:forwards;/* Füllfuntion der Animation für Firefox / IE /etc */
+                animation-delay:5s; /* Dauer der Animation für Firefox / IE / etc*/
+                -webkit-animation-delay:5s;/* Dauer der Animation für Safari and Chrome */
+                -webkit-animation-fill-mode:forwards;/* Füllfuntion der Animation für Safari and Chrome */
+        }
+        
+        /* Animation für Firefox / IE / etc */
+        @keyframes fade {
+                from {opacity:1;}
+                to {opacity:0;}
+        }
+        
+        /* Animation für Safari and Chrome */
+        @-webkit-keyframes fade {
+                from {opacity:1;}
+                to {opacity:0;}
+        }
+        
+        #preloadscreenimgwrapper {
+                position:absolute;/* Position frei veränderbar machen */
+                top:50%;/* Position vertikal zentrieren */
+                left:50%;/* Position horizontal zentrieren */
+                margin:-120px 0 0 -100px;/* Hier Einstellungen vornehmen 
+        
+                1. Angabe bei margin = nach oben verschieben,des do höher der negative Wert ist 
+                2. Angabe bei margin = Kann außer acht gelassen werden,sollte = 0 sein
+                3. Angabe bei margin = Kann außer acht gelassen werden,sollte = 0 sein
+                4. Anhabe bei margin = nach nach links verschieben / SOLLTE IMMER DIE HÄLFTE DER BREITES DES BILDES IN PX SEIN. Der Wert wird immer negativ angegeben */
+        }
+        
+/*]]>*/
+</style>
+
+
+<script type="text/javascript">
+//<![CDATA[
+        // Cookie-Funktion !
+        // Diese Funktion wurde für die Introseite-Seite geschrieben!
+        
+        // Diese Funktion dient dazu einen Wert aus dem Cookie zu erhalten!
+        function WertHolen() {
+                var Wert = "";
+                if (document.cookie) {
+                        var Wertstart = document.cookie.indexOf("=") + 1;
+                        var Wertende = document.cookie.indexOf(";");
+                        if (Wertende == -1) Wertende = document.cookie.length;
+                        Wert = document.cookie.substring(Wertstart, Wertende);
+                }
+                return Wert;
+        }
+        
+        // Diese Funktion dient dazu einen Cookie zu setzen!
+        function WertSetzen(Bezeichner, Wert, Verfall) {
+                var jetzt = new Date();
+                var Auszeit = new Date(jetzt.getTime() + Verfall);
+                document.cookie = Bezeichner + "=" + Wert + "; expires=" + Auszeit.toGMTString() + ";";
+        }
+        
+        function Zaehlerstand() {
+        // Bei der Verfallszeit gibt der letzte Parameter an, wie viele tage der Cookie gespeichert wird!
+                var Verfallszeit = 1000 * 60 * 60 * 24 * 1;
+                var Anzahl = WertHolen();
+                var Zaehler = 0;
+                if (Anzahl != "") Zaehler = parseInt(Anzahl);
+                Zaehler = Zaehler + 1;
+                WertSetzen("Zaehler", Zaehler, Verfallszeit);
+                return (Zaehler);
+        }
+//]]>
+</script>
